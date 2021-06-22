@@ -42,7 +42,7 @@ namespace CodeTheWay.Web.Ui.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            return View(model);
+            return View("Create", model);
         }
         public async Task<IActionResult> Edit(Guid id)
         {
