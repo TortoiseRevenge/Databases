@@ -11,5 +11,12 @@ namespace CodeTheWay.Web.Ui.Repositories
         public Task<Student> Create(Student student);
 
         public Task<List<Student>> GetStudents();
+        public Task<Student> GetStudent(Guid id);
+
+
+        public Task<Student> Update(Student model);
+
+        public Task<Student> Delete(Student model);
+
     }
 }
