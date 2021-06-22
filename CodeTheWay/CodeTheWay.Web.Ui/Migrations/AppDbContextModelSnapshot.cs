@@ -16,13 +16,30 @@ namespace CodeTheWay.Web.Ui.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.15");
 
+            modelBuilder.Entity("CodeTheWay.Web.Ui.Models.ShippingContainer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Destination")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ShippingContainer");
+                });
+
             modelBuilder.Entity("CodeTheWay.Web.Ui.Models.Student", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("FirstMidName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
