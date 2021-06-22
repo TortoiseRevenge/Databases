@@ -1,0 +1,31 @@
+﻿@model CodeTheWay.Web.Ui.Models.Student
+@*
+    ViewData["Title"] = "Edit";
+*@
+<h1>Edit</h1>
+<form asp-action="UpDate">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div id="hidden" class="form-group" display="none">
+        <label asp-for="Id" class="control-label"></label>
+        <input asp-for="Id" class="form-control" value=@Model.Id />
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstMidName" class="control-label"></label>
+        <input asp-for="FirstMidName" class="form-control" value=@Model.FirstMidName />
+        <span asp-validation-for="FirstMidName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" value=@Model.LastName />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
