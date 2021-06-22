@@ -44,6 +44,7 @@ namespace CodeTheWay.Web.Ui.Controllers
                     var result = await StudentService.Create(student);
                     return RedirectToAction("Index");
                 }
+                return RedirectToAction("Index");
             }
             return View(model);
         }
