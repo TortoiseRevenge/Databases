@@ -31,9 +31,9 @@ namespace CodeTheWay.Web.Ui
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IStudentsService, StudentsService>();
+            services.AddScoped<IShippingContainerService, ShippingContainerService>();
 
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlite(
+            services.AddDbContext<AppDbContext>(options => options.UseSqlite(
                     Configuration.GetConnectionString("SqliteConnection")));
 
             services.AddRazorPages();
